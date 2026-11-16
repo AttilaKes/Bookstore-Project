@@ -7,7 +7,7 @@ let books = [
         likes: 1249,
         liked: false,
         img: "pexels-automnenoble-6562142.jpg",
-        comments: ["Platzhalter-Kommentar 1", "Platzhalter-Kommentar 2"],
+        comments: ["Test Kommentar 1", "Test Kommentar 2"],
     },
     {
         name: "Der Hobbit",
@@ -17,7 +17,7 @@ let books = [
         likes: 873,
         liked: false,
         img: "pexels-evi-rodemann-3557962-34260800.jpg",
-        comments: ["Platzhalter-Kommentar 1"],
+        comments: ["Test Kommentar 1"],
     },
     {
         name: "1984",
