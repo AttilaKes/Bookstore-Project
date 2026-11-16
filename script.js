@@ -1,19 +1,3 @@
-// PLANUNG (wie Kevin in Sektion I, Lektion 02 „Notizen anzeigen lassen“):
-// Notizen erst auf Deutsch, vor der Abgabe ins Englische übersetzen oder löschen.
-//
-// User Stories aus der Checkliste:
-// - Alle Bücher aus dem JSON-Array rendern: Titel, Bild, Likes, Preis,
-//   Kommentare (Marco, Livecall 10.11.: auch Autor und Erscheinungsjahr)
-// - Mindestens 3 Bücher, bei jedem Kommentare hinzufügen
-//   (optional: im LocalStorage speichern)
-// - Like: Herzfarbe ändern, Gefällt-mir-Anzahl +1 oder -1
-//   (optional: im LocalStorage speichern)
-// - Optional: Bücher als Favoriten markieren und gesondert anzeigen
-//   (Filterbuttons: Modul 6, Sektion VII, Lektion 03)
-
-// PLATZHALTER: nach Sektion II, Lektion 10 durch Kevins JSON ersetzen
-// (oder eigene Bücher mit gleicher Struktur, Marco 10.11.).
-// Danach die Schlüssel in scripts/templates.js angleichen.
 let books = [
     {
         name: "Der Name des Windes",
@@ -48,7 +32,6 @@ let books = [
 ];
 
 function init() {
-    getFromLocalStorage();
     renderBooks();
 }
 
@@ -93,7 +76,6 @@ function toggleLike(indexBook) {
         books[indexBook].liked = true;
     }
 
-    saveToLocalStorage();
     renderBooks();
 }
 
@@ -107,16 +89,6 @@ function addComment(indexBook) {
 
     books[indexBook].comments.push(comment);
     INPUT_REF.value = "";
-    saveToLocalStorage();
+
     renderComments(indexBook);
-}
-
-function saveToLocalStorage() {
-    // PLANUNG (optional laut Checkliste):
-    // - books mit JSON.stringify speichern, Muster wie im Notizblock
-}
-
-function getFromLocalStorage() {
-    // PLANUNG (optional laut Checkliste):
-    // - mit JSON.parse laden und nur übernehmen, wenn nicht null (Notizblock)
 }
