@@ -4,6 +4,39 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Bookstore</title>
+        <link rel="icon" href="./assets/icons/favicon.svg" />
+
+        <script src="./scripts/templates.js"></script>
+        <script src="./script.js"></script>
+
+        <link rel="stylesheet" href="./styles/variables.css" />
+        <link rel="stylesheet" href="./styles/standard.css" />
+        <link rel="stylesheet" href="./style.css" />
     </head>
-    <body></body>
+    <body onload="init()">
+        <header>
+            <div class="content_wrapper">
+                <h1>
+                    <a href="#">
+                        <img
+                            class="bookstore-logo"
+                            src="./assets/icons/bookstore-logo.svg"
+                            alt="bookstore-logo"
+                        />
+                    </a>
+                </h1>
+            </div>
+        </header>
+
+        <main class="content_wrapper">
+            <!-- renderBooks() renders the book cards into this container -->
+            <div id="books_content" class="book_list"></div>
+        </main>
+
+        <footer>
+            <div class="content_wrapper">
+                <p>Projekt Bookstore, Modul 7 der Developer Akademie</p>
+            </div>
+        </footer>
+    </body>
 </html>

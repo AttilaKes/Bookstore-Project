@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    font-family:
+        "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ===== Content limitation ===== */
+.content_wrapper {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--spacing);
+}
+
+/* ===== Header ===== */
+header {
+    color: var(--color-on-primary);
+    background-color: var(--color-primary);
+}
+
+.bookstore-logo {
+    width: 274px;
+}
+
+/* h1 {
+    font-size: clamp(28px, 5vw, 48px);
+} */
+
+/* ===== Book list ===== */
+main {
+    flex: 1;
+}
+
+.book_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing);
+}
+
+/* ===== Book card ===== */
+.book_card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+    width: 300px;
+    max-width: 100%;
+    padding: var(--spacing);
+    border-radius: var(--radius);
+    background-color: var(--color-card);
+}
+
+.book_card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+/* ===== Likes ===== */
+.book_likes {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+}
+
+.like_button {
+    padding: 0;
+    border: none;
+    font-size: 28px;
+    color: var(--color-like-inactive);
+    background-color: transparent;
+}
+
+.like_button.liked {
+    color: var(--color-like);
+}
+
+/* ===== Comments ===== */
+.book_comments {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+}
+
+.book_comments input {
+    width: 100%;
+    padding: var(--spacing-small);
+    font-size: 16px;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    color: var(--color-on-primary);
+    background-color: var(--color-primary);
+}
+
+/* ===== Media queries ===== */
+/* Collect media queries here at the end (DA coding convention CSS) */

@@ -1,0 +1,14 @@
+/* ===== Variables ===== */
+:root {
+    --color-background: #f6f1e9;
+    --color-card: #ffffff;
+    --color-text: #2b2b2b;
+    --color-primary: #99674eaf;
+    --color-on-primary: #ffffff;
+    --color-like: #c1121f;
+    --color-like-inactive: #8a8a8a;
+    --radius: 16px;
+    --spacing: 16px;
+    --spacing-small: 8px;
+    --content-width: 1440px;
+}
