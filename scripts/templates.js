@@ -1,4 +1,4 @@
-function getBookTemplate(indexBook) {
+function getBookTemplate(indexBook, likeClass) {
     return `
     <article class="book_card">
         <h2>${books[indexBook].name}</h2>
@@ -12,7 +12,7 @@ function getBookTemplate(indexBook) {
         <div class="book_likes">
             <button
                 onclick="toggleLike(${indexBook})"
-                class="like_button"
+                class="like_button ${likeClass}"
                 aria-label="Gefällt mir"
             >♥</button>
             <span>${books[indexBook].likes}</span>

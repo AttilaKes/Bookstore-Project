@@ -57,7 +57,8 @@ function renderBooks() {
     BOOKS_CONTENT_REF.innerHTML = "";
 
     for (let indexBook = 0; indexBook < books.length; indexBook++) {
-        BOOKS_CONTENT_REF.innerHTML += getBookTemplate(indexBook);
+        let likeClass = getLikeClass(indexBook);
+        BOOKS_CONTENT_REF.innerHTML += getBookTemplate(indexBook, likeClass);
         renderComments(indexBook);
     }
 }
@@ -75,21 +76,39 @@ function renderComments(indexBook) {
     }
 }
 
+function getLikeClass(indexBook) {
+    if (books[indexBook].liked) {
+        return "liked";
+    } else {
+        return "";
+    }
+}
+
 function toggleLike(indexBook) {
-    // PLANUNG:
-    // - liked umschalten: aus false wird true und umgekehrt
-    // - likes um 1 erhöhen oder verringern
-    // - Herzfarbe: Klasse "liked" aus style.css. Templates enthalten kein if
-    //   (Kevin, Sektion I, Lektion 11), die Entscheidung trifft script.js
-    // - neu rendern, optional speichern
+    if (books[indexBook].liked) {
+        books[indexBook].likes--;
+        books[indexBook].liked = false;
+    } else {
+        books[indexBook].likes++;
+        books[indexBook].liked = true;
+    }
+
+    saveToLocalStorage();
+    renderBooks();
 }
 
 function addComment(indexBook) {
-    // PLANUNG:
-    // - Text aus dem Feld "comment_input_" + indexBook holen
-    // - leere Eingabe abfangen wie addNote() im Notizblock (trim)
-    // - Text an die Kommentare des Buchs anhängen (push)
-    // - Feld leeren, neu rendern, optional speichern
+    const INPUT_REF = document.getElementById(`comment_input_${indexBook}`);
+    let comment = INPUT_REF.value.trim();
+
+    if (comment === "") {
+        return;
+    }
+
+    books[indexBook].comments.push(comment);
+    INPUT_REF.value = "";
+    saveToLocalStorage();
+    renderComments(indexBook);
 }
 
 function saveToLocalStorage() {
