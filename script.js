@@ -40,10 +40,16 @@ function renderBooks() {
     BOOKS_CONTENT_REF.innerHTML = "";
 
     for (let indexBook = 0; indexBook < books.length; indexBook++) {
-        let likeClass = getLikeClass(indexBook);
-        BOOKS_CONTENT_REF.innerHTML += getBookTemplate(indexBook, likeClass);
+        BOOKS_CONTENT_REF.innerHTML += getBookTemplate(indexBook);
+        renderLikes(indexBook);
         renderComments(indexBook);
     }
+}
+
+function renderLikes(indexBook) {
+    const LIKES_REF = document.getElementById(`likes_${indexBook}`);
+    let likeClass = getLikeClass(indexBook);
+    LIKES_REF.innerHTML = getLikesTemplate(indexBook, likeClass);
 }
 
 function renderComments(indexBook) {
@@ -76,7 +82,7 @@ function toggleLike(indexBook) {
         books[indexBook].liked = true;
     }
 
-    renderBooks();
+    renderLikes(indexBook);
 }
 
 function addComment(indexBook) {

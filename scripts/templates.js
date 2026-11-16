@@ -1,4 +1,4 @@
-function getBookTemplate(indexBook, likeClass) {
+function getBookTemplate(indexBook) {
     return `
     <article class="book_card">
         <h2>${books[indexBook].name}</h2>
@@ -9,14 +9,8 @@ function getBookTemplate(indexBook, likeClass) {
         <p>Autor: ${books[indexBook].author}</p>
         <p>Erscheinungsjahr: ${books[indexBook].publishedYear}</p>
         <p>Preis: ${books[indexBook].price} €</p>
-        <div class="book_likes">
-            <button
-                onclick="toggleLike(${indexBook})"
-                class="like_button ${likeClass}"
-                aria-label="Gefällt mir"
-            >♥</button>
-            <span>${books[indexBook].likes}</span>
-        </div>
+        <div id="likes_${indexBook}" class="book_likes"></div>
+
         <section class="book_comments">
             <h3>Kommentare</h3>
             <ul id="comments_${indexBook}"></ul>
@@ -25,6 +19,17 @@ function getBookTemplate(indexBook, likeClass) {
             <button onclick="addComment(${indexBook})">Senden</button>
         </section>
     </article>
+    `;
+}
+
+function getLikesTemplate(indexBook, likeClass) {
+    return `
+    <button
+        onclick="toggleLike(${indexBook})"
+        class="like_button ${likeClass}"
+        aria-label="Gefällt mir"
+    >♥</button>
+    <span>${books[indexBook].likes}</span>
     `;
 }
 

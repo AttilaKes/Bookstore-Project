@@ -6,6 +6,7 @@ body {
         "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     color: var(--color-text);
     background-color: var(--color-background);
+    font-size: 18px;
 }
 
 img {
@@ -14,6 +15,7 @@ img {
 
 button {
     cursor: pointer;
+    font: inherit;
 }
 
 /* ===== Content limitation ===== */
@@ -62,6 +64,10 @@ main {
     background-color: var(--color-card);
 }
 
+.book_card h2 {
+    font-size: 24px;
+}
+
 .book_card img {
     width: 100%;
     aspect-ratio: 2 / 3;
@@ -90,14 +96,28 @@ main {
 /* ===== Comments ===== */
 .book_comments {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: var(--spacing-small);
 }
 
+.book_comments ul {
+    max-height: 72px;
+    overflow-y: auto;
+}
+
+.book_comments label {
+    margin-top: auto;
+}
+
 .book_comments input {
     width: 100%;
-    padding: var(--spacing-small);
-    font-size: 16px;
+    padding: var(--spacing-small) var(--spacing);
+    font: inherit;
+}
+
+.book_comments button {
+    padding: var(--spacing-small) var(--spacing);
 }
 
 /* ===== Footer ===== */
